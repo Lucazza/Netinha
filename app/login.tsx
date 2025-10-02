@@ -15,12 +15,15 @@ export default function LoginScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Image source={require("../assets/images/logonetflix2.png")} style={styles.logo} />
+        <Image 
+          source={require("../assets/images/n1 1.png")} 
+          style={styles.logo} 
+        />
       </View>
       
       <View style={styles.content}>
         <View style={styles.form}>
-          <Text style={styles.title}>Entrar</Text>
+
           
           <TextInput
             style={styles.input}
@@ -62,6 +65,8 @@ export default function LoginScreen() {
   );
 };
 
+// ---
+
 const styles = StyleSheet.create({
   container: { 
     flex: 1, 
@@ -70,10 +75,10 @@ const styles = StyleSheet.create({
   header: {
     paddingTop: 20,
     paddingHorizontal: 20,
-    alignItems: 'center'
+    alignItems: 'flex-start' // 👈 Altera de 'center' para 'flex-start'
   },
   logo: {
-    width: 120,
+    width: 120, // 👈 Diminui para o tamanho da logo "N"
     height: 40,
     resizeMode: 'contain'
   },
@@ -85,6 +90,7 @@ const styles = StyleSheet.create({
   form: {
     width: '100%'
   },
+  // O estilo 'title' foi mantido, mas não está sendo usado
   title: {
     color: '#fff',
     fontSize: 32,

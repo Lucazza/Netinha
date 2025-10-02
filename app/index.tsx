@@ -1,9 +1,19 @@
 // app/index.tsx (SplashScreen)
 import React, { useEffect, useRef } from 'react';
-import { StyleSheet, View, SafeAreaView, Text, Animated, Dimensions } from 'react-native';
+import { 
+  StyleSheet, 
+  View, 
+  SafeAreaView, 
+  Animated, 
+  Dimensions, 
+  Image 
+} from 'react-native';
 import { useRouter } from 'expo-router';
 
 const { width, height } = Dimensions.get('window');
+
+// Carrega a imagem da logo. Ajuste a extensão se não for .png
+const NetflixLogo = require('../assets/images/n1 1.png');
 
 export default function SplashScreen() {
   const router = useRouter();
@@ -53,8 +63,12 @@ export default function SplashScreen() {
           }
         ]}
       >
-        <Text style={styles.logo}>NETFLIX</Text>
-        <View style={styles.logoUnderline} />
+        <Image
+          source={NetflixLogo}
+          style={styles.imageLogo}
+          resizeMode="contain"
+        />
+        {/* O componente View para o sublinhado foi removido */}
       </Animated.View>
     </SafeAreaView>
   );
@@ -87,20 +101,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  logo: {
-    fontSize: 48,
-    fontWeight: '900',
-    color: '#E50914',
-    letterSpacing: 3,
-    textShadowColor: 'rgba(0,0,0,0.8)',
-    textShadowOffset: { width: 0, height: 2 },
-    textShadowRadius: 4,
+  // Novo estilo para a imagem da logo
+  imageLogo: {
+    width: 250, 
+    height: 150, 
   },
-  logoUnderline: {
-    width: 120,
-    height: 4,
-    backgroundColor: '#E50914',
-    marginTop: 10,
-    borderRadius: 2,
-  }
+  // Estilos 'logo' e 'logoUnderline' originais foram removidos
 });

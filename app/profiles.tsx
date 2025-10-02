@@ -5,6 +5,8 @@ import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { Profile } from '../src/types';
 
+
+const NetflixLogo = require('../assets/images/n1 1.png');
 const profiles: Profile[] = [
   { 
     id: "1", 
@@ -26,9 +28,9 @@ const profiles: Profile[] = [
   },
   { 
     id: "4", 
-    name: "Adicionar perfil", 
-    avatar: null,
-    isAdd: true
+    name: "Convidado", 
+    avatar: require("../assets/images/perfil amarelo.png"), 
+    isAdd: false
   }
 ];
 
@@ -36,10 +38,6 @@ export default function ProfileSelectionScreen() {
   const router = useRouter();
 
   const handleProfileSelect = (item: Profile) => {
-    if (item.isAdd) {
-      // Lógica para adicionar novo perfil
-      return;
-    }
     router.replace('/(tabs)/home');
   };
 
@@ -49,19 +47,15 @@ export default function ProfileSelectionScreen() {
       onPress={() => handleProfileSelect(item)}
       activeOpacity={0.8}
     >
-          <View style={styles.avatarContainer}>
-            {item.isAdd ? (
-              <View style={styles.addIconContainer}>
-                <Ionicons name="add" size={40} color="#fff" />
-              </View>
-            ) : item.avatar ? (
-              <Image
-                source={item.avatar}
-                style={styles.avatar}
-                onError={() => console.log('Erro ao carregar imagem:', item.avatar)}
-              />
-            ) : null}
-          </View>
+      <View style={styles.avatarContainer}>
+        {item.avatar && (
+          <Image
+            source={item.avatar}
+            style={styles.avatar}
+            onError={() => console.log('Erro ao carregar imagem:', item.avatar)}
+          />
+        )}
+      </View>
       <Text style={styles.profileName}>{item.name}</Text>
     </TouchableOpacity>
   );
@@ -69,6 +63,15 @@ export default function ProfileSelectionScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
+        
+        <View style={styles.logoContainer}>
+          <Image
+            source={NetflixLogo}
+            style={styles.headerLogo}
+            resizeMode="contain"
+          />
+        </View>
+
         <Text style={styles.title}>Quem está assistindo?</Text>
         
         <FlatList
@@ -87,19 +90,32 @@ export default function ProfileSelectionScreen() {
 const styles = StyleSheet.create({
   container: { 
     flex: 1, 
-    backgroundColor: '#000'
+    backgroundColor: '#000',
+    paddingTop: 40, 
   },
   content: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start', 
     paddingHorizontal: 20
   },
+  
+  logoContainer: {
+    alignItems: 'center', 
+    width: '100%',
+    marginBottom: 40, 
+  },
+  
+  headerLogo: {
+    width: 120,
+    height: 50,
+  },
+  
   title: { 
     color: '#fff', 
-    fontSize: 28, 
+    fontSize: 24, 
     fontWeight: 'bold', 
-    marginBottom: 40,
+    marginBottom: 50,
     textAlign: 'center'
   },
   list: { 
@@ -127,19 +143,9 @@ const styles = StyleSheet.create({
     height: 100, 
     borderRadius: 4
   },
-  addIconContainer: {
-    width: 100,
-    height: 100,
-    backgroundColor: 'rgba(255,255,255,0.1)',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 4,
-    borderWidth: 2,
-    borderColor: 'rgba(255,255,255,0.3)',
-    borderStyle: 'dashed'
-  },
+  
   profileName: { 
-    color: '#808080', 
+    color: '#fff',
     fontSize: 16,
     textAlign: 'center'
   }
