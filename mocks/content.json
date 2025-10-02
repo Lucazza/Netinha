@@ -1,0 +1,47 @@
+{
+  "featured": {
+    "title": "Money Heist",
+    "cover": "https://image.tmdb.org/t/p/original/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg"
+  },
+  "sections": [
+    {
+      "id": "1",
+      "title": "Em Alta",
+      "items": [
+        { "id": "1", "title": "Money Heist", "image": "https://image.tmdb.org/t/p/w500/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg" },
+        { "id": "2", "title": "Peaky Blinders", "image": "https://image.tmdb.org/t/p/w500/6PX0rCQmzupjWfHL3bD9ZUrvhpZ.jpg" },
+        { "id": "3", "title": "Stranger Things", "image": "https://image.tmdb.org/t/p/w500/A4Uky1e9e2Z3u22n6BF0tCg2j0Y.jpg" },
+        { "id": "4", "title": "The Witcher", "image": "https://image.tmdb.org/t/p/w500/e3NBGiAifW9Xt84dQ2uPgO8b4gG.jpg" },
+        { "id": "5", "title": "Bridgerton", "image": "https://image.tmdb.org/t/p/w500/7WUHnWGx5CDFme2jd422ayVnOr1.jpg" }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Minha Lista",
+      "items": [
+        { "id": "6", "title": "Ozark", "image": "https://image.tmdb.org/t/p/w500/c1ROx01IBiC7i44bf5mO18gLwS.jpg" },
+        { "id": "7", "title": "The Crown", "image": "https://image.tmdb.org/t/p/w500/p6bneMMK2b4aApg20wKCk2fS2p.jpg" },
+        { "id": "8", "title": "Dark", "image": "https://image.tmdb.org/t/p/w500/5myQbDzw3l8K9yofUXRJ4UTVgam.jpg" },
+        { "id": "9", "title": "Wednesday", "image": "https://image.tmdb.org/t/p/w500/9PFonBhy4cQy7Jz20NpMygczOkv.jpg" }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Novidades",
+      "items": [
+        { "id": "10", "title": "Elite", "image": "https://image.tmdb.org/t/p/w500/3NTAbAiao4JLzFfrw4Qx9jk9OWb.jpg" },
+        { "id": "11", "title": "Squid Game", "image": "https://image.tmdb.org/t/p/w500/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg" },
+        { "id": "12", "title": "The Last of Us", "image": "https://image.tmdb.org/t/p/w500/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg" }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Tendências",
+      "items": [
+        { "id": "13", "title": "Euphoria", "image": "https://image.tmdb.org/t/p/w500/jtnfNzqZwN4E32FGGxx1YZa0WWv.jpg" },
+        { "id": "14", "title": "The Mandalorian", "image": "https://image.tmdb.org/t/p/w500/eU1i6eHXlzMOlEq0ku1RzqRJYaw.jpg" },
+        { "id": "15", "title": "Loki", "image": "https://image.tmdb.org/t/p/w500/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg" }
+      ]
+    }
+  ]
+}
